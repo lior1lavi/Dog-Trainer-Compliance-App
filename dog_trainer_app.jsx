@@ -81,10 +81,10 @@ const WALKTHROUGH_GUIDES = {
   scheduling: {
     title: 'Scheduling Sessions',
     tips: [
-      { id: 'nav-scheduling', title: '📅 Scheduling', description: 'Book and manage training sessions with your clients.' },
-      { id: 'calendar', title: 'Interactive Calendar', description: 'Click on any date to create a new training session.' },
-      { id: 'session-form', title: 'Session Details', description: 'Enter client, pet, date/time, location, and training tasks.' },
-      { id: 'share-session', title: '📤 Share', description: 'Send session details to your client so they know when to meet.' }
+      { id: 'calendar', title: '📅 Calendar', description: 'Click on any date in the calendar to create or view training sessions.' },
+      { id: 'session-form', title: '📝 New Session', description: 'Click the New Session button to create a training session.' },
+      { id: 'share-session', title: '📤 Upcoming Sessions', description: 'View your upcoming training sessions and share details with clients.' },
+      { id: 'calendar', title: '✅ Session Details', description: 'Click on any session to view or edit the details.' }
     ]
   },
   homework: {
@@ -1469,7 +1469,7 @@ function AssignmentForm({ clientId, templates }) {
   
   return (
     <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
-      <Select onChange={(e) => handleTemplateChange(e.target.value)}>
+      <Select onChange={(e) => handleTemplateChange(e.target.value)} data-walkthrough="template-select">
         <option value="">Start from scratch...</option>
         {templates.map(t => (
           <option key={t.id} value={t.id}>{t.title}</option>
@@ -1484,7 +1484,7 @@ function AssignmentForm({ clientId, templates }) {
         required 
       />
       
-      <div>
+      <div data-walkthrough="task-list">
         <label className="block text-sm font-medium mb-2">Tasks</label>
         
         <div className="mb-3 p-3 bg-gray-50 rounded-lg border">
