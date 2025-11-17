@@ -760,9 +760,9 @@ function NavBar() {
   const navItems = [
     { name: 'Dashboard', icon: LayoutDashboard, page: 'dashboard', action: toDashboard },
     { name: 'Clients', icon: Users, page: 'clients', action: toClients },
-    { name: 'Templates', icon: ClipboardList, page: 'templates', action: toTemplates },
+    { name: 'Training Sessions', icon: ClipboardList, page: 'templates', action: toTemplates },
     // --- NEW V2 NAV ITEMS (PLACEHOLDERS) ---
-    { name: 'Scheduling', icon: Calendar, page: 'scheduling', action: toScheduling },
+    { name: 'Training Appointments', icon: Calendar, page: 'scheduling', action: toScheduling },
     { name: 'Help & Docs', icon: HelpCircle, page: 'help', action: toHelp },
     { name: 'Billing', icon: CreditCard, page: 'billing', action: toBilling },
   ];
@@ -2624,7 +2624,7 @@ function SchedulingPage() {
   return (
     <div>
       <div className="flex justify-between items-center mb-6">
-        <h1 className="text-3xl font-bold text-gray-900">Training Sessions</h1>
+        <h1 className="text-3xl font-bold text-gray-900">Training Appointments</h1>
         <Button onClick={() => {
           setSelectedDateForNew(null);
           setShowNewSession(true);
@@ -2957,7 +2957,7 @@ function TemplatesPage() {
   
   return (
     <div>
-      <h1 className="text-3xl font-bold text-gray-900 mb-6">Homework Templates</h1>
+      <h1 className="text-3xl font-bold text-gray-900 mb-6">Training Sessions</h1>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <Card data-walkthrough="template-select">
           <h2 className="text-xl font-semibold mb-4">Create New Template</h2>
